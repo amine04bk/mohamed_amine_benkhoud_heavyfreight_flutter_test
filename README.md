@@ -61,8 +61,8 @@ Google Maps API Key: Required for Google Maps integration (set up in .env).
 
 Setup Instructions
 1. Clone the Repository
-git clone https://github.com/your-repo/heavyfreight_app.git
-cd heavyfreight_app
+git clone https://github.com/your-repo/mohamed_amine_benkhoud_heavyfreight_flutter_test.git
+cd mohamed_amine_benkhoud_heavyfreight_flutter_test
 
 2. Install Dependencies
 Run the following command to install all required packages:

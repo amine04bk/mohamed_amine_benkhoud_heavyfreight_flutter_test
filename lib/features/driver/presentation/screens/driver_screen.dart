@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:heavyfreight_app/core/constants/app_colors.dart';
-import 'package:heavyfreight_app/core/widgets/custom_button.dart';
-import 'package:heavyfreight_app/features/driver/viewmodels/driver_viewmodel.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/constants/app_colors.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/widgets/custom_button.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/driver/viewmodels/driver_viewmodel.dart';
 
 class DriverScreen extends ConsumerStatefulWidget {
   const DriverScreen({Key? key}) : super(key: key);
@@ -112,129 +112,166 @@ class _DriverScreenState extends ConsumerState<DriverScreen> {
                   child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: driverState.isLoading
-                        ? const Center(child: CircularProgressIndicator())
-                        : driverState.errorMessage != null
+                    child:
+                        driverState.isLoading
+                            ? const Center(child: CircularProgressIndicator())
+                            : driverState.errorMessage != null
                             ? Center(
-                                child: Text(
-                                  driverState.errorMessage!,
-                                  style: const TextStyle(color: Colors.white),
-                                ),
-                              )
+                              child: Text(
+                                driverState.errorMessage!,
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                            )
                             : ListView.builder(
-                                itemCount: driverState.jobs.length,
-                                itemBuilder: (context, index) {
-                                  final job = driverState.jobs[index];
-                                  return Padding(
-                                    padding: const EdgeInsets.only(bottom: 16),
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      elevation: 4,
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(16),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                const Text(
-                                                  'Job Details',
-                                                  style: TextStyle(
-                                                    fontSize: 18,
-                                                    fontWeight: FontWeight.bold,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  padding: const EdgeInsets.symmetric(
-                                                    horizontal: 8,
-                                                    vertical: 4,
-                                                  ),
-                                                  decoration: BoxDecoration(
-                                                    color: job.isAccepted
-                                                        ? Colors.green
-                                                        : AppColors.primaryOrange,
-                                                    borderRadius: BorderRadius.circular(12),
-                                                  ),
-                                                  child: Text(
-                                                    job.isAccepted ? 'Accepted' : 'Available',
-                                                    style: const TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 12,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 10),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.location_on, size: 16, color: Colors.grey),
-                                                const SizedBox(width: 8),
-                                                Expanded(
-                                                  child: Text(
-                                                    'Pickup: ${job.pickupLocation}',
-                                                    style: const TextStyle(fontSize: 14),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.location_on, size: 16, color: Colors.grey),
-                                                const SizedBox(width: 8),
-                                                Expanded(
-                                                  child: Text(
-                                                    'Drop-off: ${job.dropoffLocation}',
-                                                    style: const TextStyle(fontSize: 14),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.inventory, size: 16, color: Colors.grey),
-                                                const SizedBox(width: 8),
-                                                Text(
-                                                  'Size: ${job.size}',
-                                                  style: const TextStyle(fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Row(
-                                              children: [
-                                                const Icon(Icons.attach_money, size: 16, color: Colors.grey),
-                                                const SizedBox(width: 8),
-                                                Text(
-                                                  'Pay: ${job.pay.toStringAsFixed(2)} DT',
-                                                  style: const TextStyle(fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 16),
-                                            if (!job.isAccepted)
-                                              Center(
-                                                child: CustomButton(
-                                                  text: 'Accept Job',
-                                                  onPressed: () {
-                                                    DriverViewModel(ref).acceptJob(job.id).then((_) {
-                                                      _showConfirmation('Job Accepted Successfully!');
-                                                    });
-                                                  },
+                              itemCount: driverState.jobs.length,
+                              itemBuilder: (context, index) {
+                                final job = driverState.jobs[index];
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 16),
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    elevation: 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              const Text(
+                                                'Job Details',
+                                                style: TextStyle(
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                          ],
-                                        ),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                      horizontal: 8,
+                                                      vertical: 4,
+                                                    ),
+                                                decoration: BoxDecoration(
+                                                  color:
+                                                      job.isAccepted
+                                                          ? Colors.green
+                                                          : AppColors
+                                                              .primaryOrange,
+                                                  borderRadius:
+                                                      BorderRadius.circular(12),
+                                                ),
+                                                child: Text(
+                                                  job.isAccepted
+                                                      ? 'Accepted'
+                                                      : 'Available',
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 12,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 10),
+                                          Row(
+                                            children: [
+                                              const Icon(
+                                                Icons.location_on,
+                                                size: 16,
+                                                color: Colors.grey,
+                                              ),
+                                              const SizedBox(width: 8),
+                                              Expanded(
+                                                child: Text(
+                                                  'Pickup: ${job.pickupLocation}',
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Row(
+                                            children: [
+                                              const Icon(
+                                                Icons.location_on,
+                                                size: 16,
+                                                color: Colors.grey,
+                                              ),
+                                              const SizedBox(width: 8),
+                                              Expanded(
+                                                child: Text(
+                                                  'Drop-off: ${job.dropoffLocation}',
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Row(
+                                            children: [
+                                              const Icon(
+                                                Icons.inventory,
+                                                size: 16,
+                                                color: Colors.grey,
+                                              ),
+                                              const SizedBox(width: 8),
+                                              Text(
+                                                'Size: ${job.size}',
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 8),
+                                          Row(
+                                            children: [
+                                              const Icon(
+                                                Icons.attach_money,
+                                                size: 16,
+                                                color: Colors.grey,
+                                              ),
+                                              const SizedBox(width: 8),
+                                              Text(
+                                                'Pay: ${job.pay.toStringAsFixed(2)} DT',
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          const SizedBox(height: 16),
+                                          if (!job.isAccepted)
+                                            Center(
+                                              child: CustomButton(
+                                                text: 'Accept Job',
+                                                onPressed: () {
+                                                  DriverViewModel(
+                                                    ref,
+                                                  ).acceptJob(job.id).then((_) {
+                                                    _showConfirmation(
+                                                      'Job Accepted Successfully!',
+                                                    );
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                        ],
                                       ),
                                     ),
-                                  );
-                                },
-                              ),
+                                  ),
+                                );
+                              },
+                            ),
                   ),
                 ),
               ],

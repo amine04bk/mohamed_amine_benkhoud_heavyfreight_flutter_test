@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "heavyfreight_app" "\0"
+            VALUE "FileDescription", "mohamed_amine_benkhoud_heavyfreight_flutter_test" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "heavyfreight_app" "\0"
+            VALUE "InternalName", "mohamed_amine_benkhoud_heavyfreight_flutter_test" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "heavyfreight_app.exe" "\0"
-            VALUE "ProductName", "heavyfreight_app" "\0"
+            VALUE "OriginalFilename", "mohamed_amine_benkhoud_heavyfreight_flutter_test.exe" "\0"
+            VALUE "ProductName", "mohamed_amine_benkhoud_heavyfreight_flutter_test" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

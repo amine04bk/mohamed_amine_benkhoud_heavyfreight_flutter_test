@@ -2,17 +2,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
-import 'package:heavyfreight_app/core/constants/app_colors.dart';
-import 'package:heavyfreight_app/core/widgets/custom_button.dart';
-import 'package:heavyfreight_app/features/package_form/presentation/screens/package_form_screen.dart';
-import 'package:heavyfreight_app/features/driver/presentation/screens/driver_screen.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/constants/app_colors.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/widgets/custom_button.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/package_form/presentation/screens/package_form_screen.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/driver/presentation/screens/driver_screen.dart';
 import '../providers/auth_provider.dart';
 
 class OTPScreen extends ConsumerStatefulWidget {
   final String phoneNumber;
   final bool isDriver;
 
-  const OTPScreen({required this.phoneNumber, this.isDriver = false, Key? key}) : super(key: key);
+  const OTPScreen({required this.phoneNumber, this.isDriver = false, Key? key})
+    : super(key: key);
 
   @override
   _OTPScreenState createState() => _OTPScreenState();
@@ -224,9 +225,11 @@ class _OTPScreenState extends ConsumerState<OTPScreen>
                                 Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) => widget.isDriver
-                                        ? const DriverScreen()
-                                        : const PackageFormScreen(),
+                                    builder:
+                                        (_) =>
+                                            widget.isDriver
+                                                ? const DriverScreen()
+                                                : const PackageFormScreen(),
                                   ),
                                 );
                               } else {
@@ -237,24 +240,26 @@ class _OTPScreenState extends ConsumerState<OTPScreen>
                           ),
                           const SizedBox(height: 10),
                           TextButton(
-                            onPressed: _timerSeconds > 0
-                                ? null
-                                : () {
-                                    authNotifier.sendOTP(widget.phoneNumber);
-                                    setState(() {
-                                      _timerSeconds = 90;
-                                      startTimer();
-                                    });
-                                    _showCheckPopup('OTP Resent!');
-                                  },
+                            onPressed:
+                                _timerSeconds > 0
+                                    ? null
+                                    : () {
+                                      authNotifier.sendOTP(widget.phoneNumber);
+                                      setState(() {
+                                        _timerSeconds = 90;
+                                        startTimer();
+                                      });
+                                      _showCheckPopup('OTP Resent!');
+                                    },
                             child: Text(
                               _timerSeconds > 0
                                   ? "Didn't receive a code? Wait $_timerSeconds s"
                                   : "Didn't receive a code? RESEND",
                               style: TextStyle(
-                                color: _timerSeconds > 0
-                                    ? AppColors.textGrey
-                                    : AppColors.primaryOrange,
+                                color:
+                                    _timerSeconds > 0
+                                        ? AppColors.textGrey
+                                        : AppColors.primaryOrange,
                               ),
                             ),
                           ),
@@ -277,7 +282,7 @@ class OTPField extends StatelessWidget {
   final Function(int, String)? onChanged;
 
   const OTPField({required this.controllers, this.onChanged, Key? key})
-      : super(key: key);
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {

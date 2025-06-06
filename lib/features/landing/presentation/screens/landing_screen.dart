@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:heavyfreight_app/core/constants/app_colors.dart';
-import 'package:heavyfreight_app/core/widgets/custom_button.dart';
-import 'package:heavyfreight_app/features/auth/presentation/screens/phone_screen.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/constants/app_colors.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/widgets/custom_button.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/auth/presentation/screens/phone_screen.dart';
 
 class LandingScreen extends ConsumerWidget {
   const LandingScreen({Key? key}) : super(key: key);

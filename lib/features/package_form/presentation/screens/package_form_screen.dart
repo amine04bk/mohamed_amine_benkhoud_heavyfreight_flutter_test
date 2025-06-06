@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:heavyfreight_app/features/delivery_info/presentation/screens/delivery_info_screen.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/delivery_info/presentation/screens/delivery_info_screen.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/widgets/custom_button.dart';
 import '../../../../models/package.dart';

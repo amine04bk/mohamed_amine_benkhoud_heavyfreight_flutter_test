@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:heavyfreight_app/features/driver/presentation/providers/driver_provider.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/driver/presentation/providers/driver_provider.dart';
 
 class DriverViewModel {
   final WidgetRef ref;

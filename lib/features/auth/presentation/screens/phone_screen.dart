@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:heavyfreight_app/core/constants/app_colors.dart';
-import 'package:heavyfreight_app/core/widgets/custom_button.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/constants/app_colors.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/core/widgets/custom_button.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import '../providers/auth_provider.dart';
 import 'otp_screen.dart';

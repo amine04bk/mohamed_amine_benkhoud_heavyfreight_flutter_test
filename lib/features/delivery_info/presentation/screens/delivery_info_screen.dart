@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:heavyfreight_app/features/tracking/presentation/screens/tracking_screen.dart';
+import 'package:mohamed_amine_benkhoud_heavyfreight_flutter_test/features/tracking/presentation/screens/tracking_screen.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/widgets/custom_button.dart';
 
